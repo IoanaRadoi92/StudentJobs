@@ -16,13 +16,13 @@
         <dd>
             <span>{{student.email}}</span>
         </dd>
-        <dt><span>Company</span></dt>
+        <dt><span>Current Company</span></dt>
         <dd>
             <div *ngIf="student.company">
                 <a [routerLink]="['/company', student.company?.id]">{{student.company?.name}}</a>
             </div>
         </dd>
-        <dt><span>Title</span></dt>
+        <dt><span>Current Title</span></dt>
         <dd>
             <div *ngIf="student.title">
                 <a [routerLink]="['/title', student.title?.id]">{{student.title?.name}}</a>

@@ -52,14 +52,14 @@
         </div>
 
         <div class="form-group">
-            <label for="field_company">Company</label>
+            <label for="field_company">Current Company</label>
             <select class="form-control" id="field_company" name="company" [(ngModel)]="student.company" >
                 <option [ngValue]="null"></option>
                 <option [ngValue]="companyOption.id === student.company?.id ? student.company : companyOption" *ngFor="let companyOption of companies; trackBy: trackCompanyById">{{companyOption.name}}</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="field_title">Title</label>
+            <label for="field_title">Current Title</label>
             <select class="form-control" id="field_title" name="title" [(ngModel)]="student.title" >
                 <option [ngValue]="null"></option>
                 <option [ngValue]="titleOption.id === student.title?.id ? student.title : titleOption" *ngFor="let titleOption of titles; trackBy: trackTitleById">{{titleOption.name}}</option>
