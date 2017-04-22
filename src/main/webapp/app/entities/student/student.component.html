@@ -20,8 +20,9 @@
             <th jhiSortBy="nume"><span>Nume</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="prenume"><span>Prenume</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="email"><span>Email</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="company.name"><span>Current Company</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="title.name"><span>Current Title</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="company.name"><span>Compania curenta</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="title.name"><span>Functia curenta</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="title.name"><span>Locuri de munca in trecut</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
             </thead>
@@ -39,6 +40,13 @@
                 <td>
                     <div *ngIf="student.title">
                         <a [routerLink]="['../title', student.title?.id ]" >{{student.title?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="student.previousJobs">
+                        <li *ngFor="let previousJobs of student.previousJobs">
+                            {{previousJobs?.company.name}}, {{previousJobs?.title.name}}
+                        </li>
                     </div>
                 </td>
                 <td class="text-right">

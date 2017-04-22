@@ -19,7 +19,7 @@ import java.util.List;
 public class PreviousjobsService {
 
     private final Logger log = LoggerFactory.getLogger(PreviousjobsService.class);
-    
+
     private final PreviousjobsRepository previousjobsRepository;
 
     public PreviousjobsService(PreviousjobsRepository previousjobsRepository) {
@@ -40,7 +40,7 @@ public class PreviousjobsService {
 
     /**
      *  Get all the previousjobs.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
@@ -48,6 +48,13 @@ public class PreviousjobsService {
     public Page<Previousjobs> findAll(Pageable pageable) {
         log.debug("Request to get all Previousjobs");
         Page<Previousjobs> result = previousjobsRepository.findAll(pageable);
+        return result;
+    }
+
+    @Transactional(readOnly = true)
+    public List<Previousjobs> findAllByStudent(Long id) {
+        log.debug("Request to get all PreviousjobsByStudent");
+        List<Previousjobs> result = previousjobsRepository.findAllByStudent(id);
         return result;
     }
 

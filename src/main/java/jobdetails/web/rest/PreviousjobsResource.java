@@ -31,7 +31,7 @@ public class PreviousjobsResource {
     private final Logger log = LoggerFactory.getLogger(PreviousjobsResource.class);
 
     private static final String ENTITY_NAME = "previousjobs";
-        
+
     private final PreviousjobsService previousjobsService;
 
     public PreviousjobsResource(PreviousjobsService previousjobsService) {
@@ -93,6 +93,13 @@ public class PreviousjobsResource {
         Page<Previousjobs> page = previousjobsService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/previousjobs");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
+
+
+    @GetMapping("/previousjobs/byStudent/{id}")
+    @Timed
+    public List<Previousjobs> getAllPreviousjobsByStudent(@PathVariable Long id) {
+        return previousjobsService.findAllByStudent(id);
     }
 
     /**

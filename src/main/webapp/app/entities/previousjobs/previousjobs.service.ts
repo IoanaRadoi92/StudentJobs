@@ -30,6 +30,12 @@ export class PreviousjobsService {
         });
     }
 
+    findByStudent(id: number): Observable<Previousjobs[]> {
+        return this.http.get(`${this.resourceUrl}/byStudent/${id}`).map((res: Response) => {
+            return res.json();
+        });
+    }
+
     query(req?: any): Observable<Response> {
         let options = this.createRequestOption(req);
         return this.http.get(this.resourceUrl, options)
