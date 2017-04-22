@@ -44,6 +44,7 @@ public class CacheConfiguration {
             cm.createCache(jobdetails.domain.User.class.getName() + ".persistentTokens", jcacheConfiguration);
             cm.createCache(jobdetails.domain.Company.class.getName(), jcacheConfiguration);
             cm.createCache(jobdetails.domain.Title.class.getName(), jcacheConfiguration);
+            cm.createCache(jobdetails.domain.Student.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
