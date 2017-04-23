@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Previousjobs } from './previousjobs.model';
 import { PreviousjobsService } from './previousjobs.service';
+import {Student} from "../student/student.model";
+import {Company} from "../company/company.model";
+import {Title} from "../title/title.model";
 @Injectable()
 export class PreviousjobsPopupService {
     private isOpen = false;
@@ -24,6 +27,22 @@ export class PreviousjobsPopupService {
                 this.previousjobsModalRef(component, previousjobs);
             });
         } else {
+            return this.previousjobsModalRef(component, new Previousjobs());
+        }
+    }
+
+    openWithStudentAlreadySet (component: Component, idStud?: number | any): NgbModalRef {
+        if (this.isOpen) {
+            return;
+        }
+        this.isOpen = true;
+
+        if (idStud) {
+            let prevJob = new Previousjobs();
+            prevJob.student = new Student;
+            prevJob.student.id = idStud;
+            return this.previousjobsModalRef(component, prevJob);
+        }else {
             return this.previousjobsModalRef(component, new Previousjobs());
         }
     }

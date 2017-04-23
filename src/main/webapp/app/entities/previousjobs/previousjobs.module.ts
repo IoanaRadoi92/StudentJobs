@@ -2,6 +2,10 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { StudentjobsSharedModule } from '../../shared';
+import {
+    PreviousjobsDialogComponentByStudent,
+    PreviousjobsPopupComponentByStudent
+} from '../student/student_previousjobs-dialog.component';
 
 import {
     PreviousjobsService,
@@ -30,14 +34,18 @@ let ENTITY_STATES = [
         PreviousjobsComponent,
         PreviousjobsDetailComponent,
         PreviousjobsDialogComponent,
+        PreviousjobsDialogComponentByStudent,
         PreviousjobsDeleteDialogComponent,
         PreviousjobsPopupComponent,
+        PreviousjobsPopupComponentByStudent,
         PreviousjobsDeletePopupComponent,
     ],
     entryComponents: [
         PreviousjobsComponent,
         PreviousjobsDialogComponent,
+        PreviousjobsDialogComponentByStudent,
         PreviousjobsPopupComponent,
+        PreviousjobsPopupComponentByStudent,
         PreviousjobsDeleteDialogComponent,
         PreviousjobsDeletePopupComponent,
     ],

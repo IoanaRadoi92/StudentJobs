@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, Output, EventEmitter, Input} from '@angular/core';
 import {Response} from '@angular/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Rx';
@@ -43,6 +43,7 @@ export class StudentComponent implements OnInit, OnDestroy {
         this.predicate = 'id';
         this.reverse = true;
     }
+
 
     loadAll() {
         this.studentService.query({

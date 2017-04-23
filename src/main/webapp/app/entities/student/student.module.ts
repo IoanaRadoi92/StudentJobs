@@ -15,6 +15,10 @@ import {
     studentRoute,
     studentPopupRoute,
 } from './';
+import {
+    PreviousjobsDialogComponentByStudent,
+    PreviousjobsPopupComponentByStudent
+} from "./student_previousjobs-dialog.component";
 
 let ENTITY_STATES = [
     ...studentRoute,
@@ -32,14 +36,14 @@ let ENTITY_STATES = [
         StudentDialogComponent,
         StudentDeleteDialogComponent,
         StudentPopupComponent,
-        StudentDeletePopupComponent,
+        StudentDeletePopupComponent
     ],
     entryComponents: [
         StudentComponent,
         StudentDialogComponent,
         StudentPopupComponent,
         StudentDeleteDialogComponent,
-        StudentDeletePopupComponent,
+        StudentDeletePopupComponent
     ],
     providers: [
         StudentService,

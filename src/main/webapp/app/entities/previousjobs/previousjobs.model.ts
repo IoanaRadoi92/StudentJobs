@@ -6,7 +6,7 @@ export class Previousjobs {
         public id?: number,
         public student?: Student,
         public company?: Company,
-        public title?: Title,
+        public title?: Title
     ) {
     }
 }

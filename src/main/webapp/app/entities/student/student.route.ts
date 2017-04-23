@@ -10,6 +10,7 @@ import { StudentPopupComponent } from './student-dialog.component';
 import { StudentDeletePopupComponent } from './student-delete-dialog.component';
 
 import { Principal } from '../../shared';
+import {PreviousjobsPopupComponentByStudent} from "./student_previousjobs-dialog.component";
 
 
 export const studentRoute: Routes = [
@@ -40,6 +41,15 @@ export const studentPopupRoute: Routes = [
     },
     outlet: 'popup'
   },
+    {
+        path: 'previousjobsbystudent-new/:idstud',
+        component: PreviousjobsPopupComponentByStudent,
+        data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'Previousjobs'
+        },
+        outlet: 'popup'
+    },
   {
     path: 'student/:id/edit',
     component: StudentPopupComponent,
